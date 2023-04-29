@@ -9,13 +9,10 @@ ebaysdk==2.1.5
 freezegun==0.3.11; python_version < '3.8'
 freezegun==0.3.15; python_version >= '3.8'
 gevent==1.5.0 ; python_version == '3.7'
-gevent==20.9.0 ; python_version > '3.7' and python_version <= '3.9'
+gevent==21.8.0 ; python_version > '3.7' and python_version <= '3.9' # There was an issue with version 20.9.0 so changed to use this version
 gevent==21.8.0 ; python_version > '3.9' and python_version <= '3.10'  # (Jammy)
 gevent==22.10.2; python_version > '3.10'
-greenlet==0.4.15 ; python_version == '3.7'
-greenlet==0.4.17 ; python_version > '3.7' and python_version <= '3.9'
-greenlet==1.1.2 ; python_version  > '3.9' and python_version <= '3.10'  # (Jammy)
-greenlet==2.0.2 ; python_version > '3.10'
+greenlet # removed explicit version requirements and added the package loosely
 idna==2.10
 Jinja2==2.11.3 ; python_version <= '3.10'  # min version = 2.10.1 (Focal - with security backports)
 Jinja2==3.1.2 ; python_version > '3.10'
@@ -31,12 +28,13 @@ passlib==1.7.4 # min version = 1.7.2 (Focal with security backports)
 Pillow==9.0.1 ; python_version <= '3.10'  # min version = 7.0.0 (Focal with security backports)
 Pillow==9.4.0 ; python_version > '3.10'
 polib==1.1.0
-psutil==5.8.0 ; python_version <= '3.10' 
-psutil==5.9.4 ; python_version > '3.10' 
-psycopg2==2.7.7 ; sys_platform != 'win32' and python_version < '3.8'
-psycopg2==2.8.6 ; sys_platform != 'win32' and python_version >= '3.8'and python_version <= '3.10'
-psycopg2==2.8.6 ; sys_platform == 'win32' and python_version < '3.10'
-psycopg2==2.9.5 ; python_version > '3.10' or ( sys_platform == 'win32' and python_version == '3.10')
+psutil==5.8.0 ; python_version <= '3.10'
+psutil==5.9.4 ; python_version > '3.10'
+# Removed pspycopg2 dependency; instead manually install (refer README.md)
+# psycopg2==2.7.7 ; sys_platform != 'win32' and python_version < '3.8'
+# psycopg2==2.8.6 ; sys_platform != 'win32' and python_version >= '3.8'and python_version <= '3.10'
+# psycopg2==2.8.6 ; sys_platform == 'win32' and python_version < '3.10'
+# psycopg2==2.9.5 ; python_version > '3.10' or ( sys_platform == 'win32' and python_version == '3.10')
 pydot==1.4.2
 pyopenssl==20.0.1
 PyPDF2==1.26.0 ; python_version <= '3.10'
