@@ -30,3 +30,21 @@ For a standard installation please follow the <a href="https://www.odoo.com/docu
 from the documentation.
 
 To learn the software, we recommend the <a href="https://www.odoo.com/slides">Odoo eLearning</a>, or <a href="https://www.odoo.com/page/scale-up-business-game">Scale-up</a>, the <a href="https://www.odoo.com/page/scale-up-business-game">business game</a>. Developers can start with <a href="https://www.odoo.com/documentation/16.0/developer/howtos.html">the developer tutorials</a>
+
+## Installation
+* To install properly, the _requirements.txt_ file had to be edited a bit
+* Instead of _psycopg2_, install
+  * `pip install psycopg2-binary`
+  * https://www.psycopg.org/docs/install.html#quick-install
+* After the dependencies are installed, create a _.odoorc_
+  * ```
+    [options]
+    db_name=odoo_test
+    db_user=odoo_user
+    db_password=
+    db_port=5432
+    db_hostname=localhost
+    ```
+  * To run Odoo,
+    * `odoo --addons-path=addons --config .odoorc -i base`
+    * `-i base` is only needed on the initial run to setup the database
